@@ -1,0 +1,1 @@
+This project aims to predict greenhouse gas emissions using supply chain data for US industries and commodities from 2010 to 2016. It performs data preprocessing, model training, and evaluation using a Random Forest Regressor.
