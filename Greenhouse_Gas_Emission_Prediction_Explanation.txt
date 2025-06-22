@@ -1,0 +1,51 @@
+1. Overview
+This project aims to predict greenhouse gas emissions using supply chain data for US industries and commodities from 2010 to 2016. It performs data preprocessing, model training, and evaluation using a Random Forest Regressor.
+
+---
+
+2. Libraries Used
+- `pandas`, `numpy`: Data handling
+- `matplotlib.pyplot`, `seaborn`: Visualization
+- `sklearn`: Model training and evaluation
+- `joblib`: Saving/loading models
+- `openpyxl`: Reading Excel files
+
+
+3. Data Import and Preparation
+- Excel file used: `SupplyChainEmissionFactorsforUSIndustriesCommodities.xlsx`
+- Data is collected for each year from 2010 to 2016.
+- Both `Commodity` and `Industry` sheets are read.
+- Columns are renamed and cleaned.
+- All yearly data is combined into a single DataFrame.
+
+
+4. Data Cleaning
+- Rows with missing values are dropped using `dropna()`.
+- Focused features: `Direct Emissions`, `Indirect Emissions`, `Total Emissions`, `Employment`, `Output`, `Year`.
+
+
+
+5. Model Training
+- `Total Emissions` is the target variable.
+- Data is split into training and testing sets using `train_test_split()`.
+- Features are standardized using `StandardScaler`.
+
+Model Used:
+- `RandomForestRegressor` from `sklearn.ensemble`
+
+
+6. Evaluation
+- Model predictions are evaluated using:
+  - Mean Squared Error (`mean_squared_error`)
+  - R² Score (`r2_score`)
+
+
+7. Model Saving
+- Trained model and scaler are saved using `joblib`.
+
+
+
+8. Optimization (Optional)
+- `GridSearchCV` is used to tune hyperparameters:
+  - `n_estimators`: Number of trees
+  - `max_depth`: Maximum tree depth
